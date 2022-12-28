@@ -27,7 +27,7 @@ fs-test-automation$ ls -1
 ```shell
 fs-test-automation$ mvn clean install
 ```
-#### 5. Ensure that selenium-server.jar and drivers are downloaded successfully
+#### 5. Ensure that selenium-server jar and drivers are downloaded successfully
 Noted: Below result is tested on Ubuntu. Based on OS, the packages would be downloaded.
 ```shell
 fs-test-automation$ ls -1 test-webdriver-downloader/Drivers
@@ -47,11 +47,11 @@ fs-test-automation$ ls -1 test-webdriver-downloader/Drivers
 #### 6. Start Selenium Server (Hub & Node). Keep both these 2 terminals running
 ```shell
 fs-test-automation$ cd test-webdriver-downloader/Drivers
-fs-test-automation/test-webdriver-downloader/Drivers$ java -jar selenium-server.jar hub
+fs-test-automation/test-webdriver-downloader/Drivers$ java -jar selenium-server hub
 ```
 ```shell
 fs-test-automation$ cd test-webdriver-downloader/Drivers
-fs-test-automation/test-webdriver-downloader/Drivers$ java -jar selenium-server.jar node --port 5555
+fs-test-automation/test-webdriver-downloader/Drivers$ java -jar selenium-server node --port 5555
 ```
 #### 7. Open another terminal to execute test cases
 ```shell
