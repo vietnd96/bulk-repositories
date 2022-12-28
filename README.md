@@ -66,6 +66,5 @@ fs-test-automation/test-robot-framework$ ls -1 target/reports/
     output.xml
     report.html
 ```
-[![Video of demonstration]
-(https://img.youtube.com/vi/bNN0VEqlRMc/maxresdefault.jpg)]
-(https://youtu.be/bNN0VEqlRMc)
+#### Video of demonstration
+[![Video of demonstration](https://img.youtube.com/vi/bNN0VEqlRMc/maxresdefault.jpg)](https://youtu.be/bNN0VEqlRMc)
