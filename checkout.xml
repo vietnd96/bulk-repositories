@@ -16,9 +16,11 @@
 
     <profiles>
         <profile>
-            <id>checkout1</id>
+            <id>repository1</id>
             <activation>
-                <activeByDefault>false</activeByDefault>
+                <file>
+                    <missing>test-automation-fwk/pom.xml</missing>
+                </file>
             </activation>
             <build>
                 <plugins>
@@ -26,20 +28,36 @@
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-scm-plugin</artifactId>
                         <version>${maven-scm-plugin.version}</version>
-                        <configuration>
-                            <basedir>${project.basedir}</basedir>
-                            <skipCheckoutIfExists>true</skipCheckoutIfExists>
-                            <checkoutDirectory>${project.basedir}/test-automation-fwk</checkoutDirectory>
-                            <connectionUrl>scm:git:git@github.com:vietnd96/test-automation-fwk.git</connectionUrl>
-                        </configuration>
+                        <goals>
+                            <goal>checkout</goal>
+                        </goals>
+                        <executions>
+                            <execution>
+                                <id>first-checkout</id>
+                                <phase>initialize</phase>
+                                <goals>
+                                    <goal>checkout</goal>
+                                </goals>
+                                <configuration>
+                                    <basedir>${project.basedir}</basedir>
+                                    <skipCheckoutIfExists>true</skipCheckoutIfExists>
+                                    <checkoutDirectory>${project.basedir}/test-automation-fwk</checkoutDirectory>
+                                    <connectionUrl>scm:git:git@github.com:vietnd96/test-automation-fwk.git
+                                    </connectionUrl>
+                                </configuration>
+                            </execution>
+                        </executions>
                     </plugin>
                 </plugins>
             </build>
         </profile>
+
         <profile>
-            <id>checkout2</id>
+            <id>repository2</id>
             <activation>
-                <activeByDefault>false</activeByDefault>
+                <file>
+                    <missing>test-java2robot-adapter/pom.xml</missing>
+                </file>
             </activation>
             <build>
                 <plugins>
@@ -47,20 +65,36 @@
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-scm-plugin</artifactId>
                         <version>${maven-scm-plugin.version}</version>
-                        <configuration>
-                            <basedir>${project.basedir}</basedir>
-                            <skipCheckoutIfExists>true</skipCheckoutIfExists>
-                            <checkoutDirectory>${project.basedir}/test-java2robot-adapter</checkoutDirectory>
-                            <connectionUrl>scm:git:git@github.com:vietnd96/test-java2robot-adapter.git</connectionUrl>
-                        </configuration>
+                        <goals>
+                            <goal>checkout</goal>
+                        </goals>
+                        <executions>
+                            <execution>
+                                <id>second-checkout</id>
+                                <phase>initialize</phase>
+                                <goals>
+                                    <goal>checkout</goal>
+                                </goals>
+                                <configuration>
+                                    <basedir>${project.basedir}</basedir>
+                                    <skipCheckoutIfExists>true</skipCheckoutIfExists>
+                                    <checkoutDirectory>${project.basedir}/test-java2robot-adapter</checkoutDirectory>
+                                    <connectionUrl>scm:git:git@github.com:vietnd96/test-java2robot-adapter.git
+                                    </connectionUrl>
+                                </configuration>
+                            </execution>
+                        </executions>
                     </plugin>
                 </plugins>
             </build>
         </profile>
+
         <profile>
-            <id>checkout3</id>
+            <id>repository3</id>
             <activation>
-                <activeByDefault>false</activeByDefault>
+                <file>
+                    <missing>test-robot-framework/pom.xml</missing>
+                </file>
             </activation>
             <build>
                 <plugins>
@@ -68,20 +102,36 @@
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-scm-plugin</artifactId>
                         <version>${maven-scm-plugin.version}</version>
-                        <configuration>
-                            <basedir>${project.basedir}</basedir>
-                            <skipCheckoutIfExists>true</skipCheckoutIfExists>
-                            <checkoutDirectory>${project.basedir}/test-robot-framework</checkoutDirectory>
-                            <connectionUrl>scm:git:git@github.com:vietnd96/test-robot-framework.git</connectionUrl>
-                        </configuration>
+                        <goals>
+                            <goal>checkout</goal>
+                        </goals>
+                        <executions>
+                            <execution>
+                                <id>third-checkout</id>
+                                <phase>initialize</phase>
+                                <goals>
+                                    <goal>checkout</goal>
+                                </goals>
+                                <configuration>
+                                    <basedir>${project.basedir}</basedir>
+                                    <skipCheckoutIfExists>true</skipCheckoutIfExists>
+                                    <checkoutDirectory>${project.basedir}/test-robot-framework</checkoutDirectory>
+                                    <connectionUrl>scm:git:git@github.com:vietnd96/test-robot-framework.git
+                                    </connectionUrl>
+                                </configuration>
+                            </execution>
+                        </executions>
                     </plugin>
                 </plugins>
             </build>
         </profile>
+
         <profile>
-            <id>checkout4</id>
+            <id>repository4</id>
             <activation>
-                <activeByDefault>false</activeByDefault>
+                <file>
+                    <missing>test-webdriver-downloader/pom.xml</missing>
+                </file>
             </activation>
             <build>
                 <plugins>
@@ -89,15 +139,29 @@
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-scm-plugin</artifactId>
                         <version>${maven-scm-plugin.version}</version>
-                        <configuration>
-                            <basedir>${project.basedir}</basedir>
-                            <skipCheckoutIfExists>true</skipCheckoutIfExists>
-                            <checkoutDirectory>${project.basedir}/test-webdriver-downloader</checkoutDirectory>
-                            <connectionUrl>scm:git:git@github.com:vietnd96/test-webdriver-downloader.git</connectionUrl>
-                        </configuration>
+                        <goals>
+                            <goal>checkout</goal>
+                        </goals>
+                        <executions>
+                            <execution>
+                                <id>fourth-checkout</id>
+                                <phase>initialize</phase>
+                                <goals>
+                                    <goal>checkout</goal>
+                                </goals>
+                                <configuration>
+                                    <basedir>${project.basedir}</basedir>
+                                    <skipCheckoutIfExists>true</skipCheckoutIfExists>
+                                    <checkoutDirectory>${project.basedir}/test-webdriver-downloader</checkoutDirectory>
+                                    <connectionUrl>scm:git:git@github.com:vietnd96/test-webdriver-downloader.git
+                                    </connectionUrl>
+                                </configuration>
+                            </execution>
+                        </executions>
                     </plugin>
                 </plugins>
             </build>
         </profile>
+
     </profiles>
 </project>
