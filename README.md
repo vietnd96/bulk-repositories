@@ -1,3 +1,17 @@
+## Documentation
+* [Test Automation Framework design](https://1drv.ms/b/s!AjgExhknfWd-hvhId19a8uZeFG4trQ)
+* [Test Reports attachment](https://github.com/vietnd96/fs-test-automation/wiki/Reports)
+
+## Issues
+* [List issues which are found while executing test](https://github.com/vietnd96/fs-test-automation/issues)
+
+## List dependency repositories
+
+1. [test-automation-fwk](https://github.com/vietnd96/test-automation-fwk)
+2. [test-java2robot-adapter](https://github.com/vietnd96/test-java2robot-adapter)
+3. [test-robot-framework](https://github.com/vietnd96/test-robot-framework)
+4. [test-webdriver-downloader](https://github.com/vietnd96/test-webdriver-downloader)
+
 ## System requires
 
 1. Git (Tested version 2.30.0). Ensure that code can be cloned from GitHub via SSH.
@@ -6,7 +20,7 @@
 3. Java JDK, JRE (Tested openjdk 11.0.16 2022-07-19)
 4. Chrome (Tested version 108.0.5359.125)
 
-## Steps
+## Steps to execute test cases
 
 #### 1. Clone this repository "fs-test-automation"
 
@@ -88,6 +102,6 @@ fs-test-automation/test-robot-framework$ ls -1 target/reports/
     report.html
 ```
 
-#### Video of demonstration
+#### Video of demonstration steps to execute test cases
 
 [![Video of demonstration](https://img.youtube.com/vi/bNN0VEqlRMc/maxresdefault.jpg)](https://youtu.be/bNN0VEqlRMc)
