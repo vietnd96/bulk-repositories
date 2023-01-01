@@ -1,9 +1,10 @@
 ## Documentation
-* [Test Automation Framework design](https://1drv.ms/b/s!AjgExhknfWd-hvhId19a8uZeFG4trQ)
+* [Test Automation Framework Design](https://1drv.ms/b/s!AjgExhknfWd-hvhId19a8uZeFG4trQ)
+* [Test Automation Tech Stack Decision](https://1drv.ms/b/s!AjgExhknfWd-hvhLVVGRUs4FdamI-Q?e=fcBoA7)
 * [Test Reports attachment](https://github.com/vietnd96/fs-test-automation/wiki/Reports)
 
-## Issues
-* [List issues which are found while executing test](https://github.com/vietnd96/fs-test-automation/issues)
+## Defects
+* [List defects which are found while executing test](https://github.com/vietnd96/fs-test-automation/issues)
 
 ## List dependency repositories
 
