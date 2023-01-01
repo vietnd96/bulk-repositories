@@ -92,7 +92,7 @@ fs-test-automation$ cd test-robot-framework
 fs-test-automation/test-robot-framework$ mvn -f pom.xml initialize robotframework:run -Dincludes=Statistics
 ```
 
-#### 8. Checkout the test report.html after execution completed
+#### 8. Checkout the test report.html and screenshots after execution completed
 
 ```shell
 fs-test-automation/test-robot-framework$ ls -1 target/reports/
@@ -100,6 +100,7 @@ fs-test-automation/test-robot-framework$ ls -1 target/reports/
     log.html
     output.xml
     report.html
+fs-test-automation/test-robot-framework$ ls -1 target/screenshots/
 ```
 
 #### Video of demonstration steps to execute test cases
