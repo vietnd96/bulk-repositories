@@ -1,10 +1,12 @@
 ## Documentation
+
 * [Test Automation Framework Design](https://drive.google.com/file/d/1rBKc4p7IKA5iQXBX6F2gbWUtoq6sY1D9/view?usp=sharing)
 * [Test Automation Tech Stack Decision](https://drive.google.com/file/d/125eQoai7GzwMWq6vDXe5K2Hum-WmNyzj/view?usp=sharing)
 * [Test Reports attachment](https://drive.google.com/drive/folders/1ry2Hzd_Fb2uhLah_0djUtewlAcR2GkpD?usp=sharing)
 * [Test Cases](https://docs.google.com/document/d/18lLFhcvEJlakTtT2YbWX3cFtFoaq_pshBVvwzz5sYEU/edit?usp=sharing)
 
 ## Defects
+
 * [List defects which are found while executing test](https://github.com/vietnd96/fs-test-automation/issues)
 
 ## List dependency repositories

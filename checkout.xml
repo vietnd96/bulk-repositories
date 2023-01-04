@@ -10,16 +10,27 @@
     <name>FS Test Automation Project</name>
 
     <properties>
+        <remote.url>git@github.com:vietnd96</remote.url>
+        <!--Leave the value as empty if any repository is not used-->
+        <repositoryRoot>fs-test-automation</repositoryRoot>
+        <repository1>test-automation-fwk</repository1>
+        <repository2>test-java2robot-adapter</repository2>
+        <repository3>test-robot-framework</repository3>
+        <repository4>test-webdriver-downloader</repository4>
         <revision>1.0.0-SNAPSHOT</revision>
         <maven-scm-plugin.version>2.0.0-M3</maven-scm-plugin.version>
     </properties>
 
     <profiles>
         <profile>
-            <id>repository1</id>
+            <id>checkout-${repository1}</id>
             <activation>
+                <property>
+                    <name>repository1</name>
+                    <value>!</value>
+                </property>
                 <file>
-                    <missing>test-automation-fwk/pom.xml</missing>
+                    <missing>${repository1}/pom.xml</missing>
                 </file>
             </activation>
             <build>
@@ -30,7 +41,7 @@
                         <version>${maven-scm-plugin.version}</version>
                         <executions>
                             <execution>
-                                <id>first-checkout</id>
+                                <id>checkout-${repository1}</id>
                                 <phase>initialize</phase>
                                 <goals>
                                     <goal>checkout</goal>
@@ -38,8 +49,8 @@
                                 <configuration>
                                     <basedir>${project.basedir}</basedir>
                                     <skipCheckoutIfExists>true</skipCheckoutIfExists>
-                                    <checkoutDirectory>${project.basedir}/test-automation-fwk</checkoutDirectory>
-                                    <connectionUrl>scm:git:git@github.com:vietnd96/test-automation-fwk.git
+                                    <checkoutDirectory>${project.basedir}/${repository1}</checkoutDirectory>
+                                    <connectionUrl>scm:git:${remote.url}/${repository1}.git
                                     </connectionUrl>
                                 </configuration>
                             </execution>
@@ -50,10 +61,14 @@
         </profile>
 
         <profile>
-            <id>repository2</id>
+            <id>checkout-${repository2}</id>
             <activation>
+                <property>
+                    <name>repository2</name>
+                    <value>!</value>
+                </property>
                 <file>
-                    <missing>test-java2robot-adapter/pom.xml</missing>
+                    <missing>${repository2}/pom.xml</missing>
                 </file>
             </activation>
             <build>
@@ -64,7 +79,7 @@
                         <version>${maven-scm-plugin.version}</version>
                         <executions>
                             <execution>
-                                <id>second-checkout</id>
+                                <id>checkout-${repository2}</id>
                                 <phase>initialize</phase>
                                 <goals>
                                     <goal>checkout</goal>
@@ -72,8 +87,8 @@
                                 <configuration>
                                     <basedir>${project.basedir}</basedir>
                                     <skipCheckoutIfExists>true</skipCheckoutIfExists>
-                                    <checkoutDirectory>${project.basedir}/test-java2robot-adapter</checkoutDirectory>
-                                    <connectionUrl>scm:git:git@github.com:vietnd96/test-java2robot-adapter.git
+                                    <checkoutDirectory>${project.basedir}/${repository2}</checkoutDirectory>
+                                    <connectionUrl>scm:git:${remote.url}/${repository2}.git
                                     </connectionUrl>
                                 </configuration>
                             </execution>
@@ -84,10 +99,14 @@
         </profile>
 
         <profile>
-            <id>repository3</id>
+            <id>checkout-${repository3}</id>
             <activation>
+                <property>
+                    <name>repository3</name>
+                    <value>!</value>
+                </property>
                 <file>
-                    <missing>test-robot-framework/pom.xml</missing>
+                    <missing>${repository3}/pom.xml</missing>
                 </file>
             </activation>
             <build>
@@ -98,7 +117,7 @@
                         <version>${maven-scm-plugin.version}</version>
                         <executions>
                             <execution>
-                                <id>third-checkout</id>
+                                <id>checkout-${repository3}</id>
                                 <phase>initialize</phase>
                                 <goals>
                                     <goal>checkout</goal>
@@ -106,8 +125,8 @@
                                 <configuration>
                                     <basedir>${project.basedir}</basedir>
                                     <skipCheckoutIfExists>true</skipCheckoutIfExists>
-                                    <checkoutDirectory>${project.basedir}/test-robot-framework</checkoutDirectory>
-                                    <connectionUrl>scm:git:git@github.com:vietnd96/test-robot-framework.git
+                                    <checkoutDirectory>${project.basedir}/${repository3}</checkoutDirectory>
+                                    <connectionUrl>scm:git:${remote.url}/${repository3}.git
                                     </connectionUrl>
                                 </configuration>
                             </execution>
@@ -118,10 +137,14 @@
         </profile>
 
         <profile>
-            <id>repository4</id>
+            <id>checkout-${repository4}</id>
             <activation>
+                <property>
+                    <name>repository4</name>
+                    <value>!</value>
+                </property>
                 <file>
-                    <missing>test-webdriver-downloader/pom.xml</missing>
+                    <missing>${repository4}/pom.xml</missing>
                 </file>
             </activation>
             <build>
@@ -132,7 +155,7 @@
                         <version>${maven-scm-plugin.version}</version>
                         <executions>
                             <execution>
-                                <id>fourth-checkout</id>
+                                <id>checkout-${repository4}</id>
                                 <phase>initialize</phase>
                                 <goals>
                                     <goal>checkout</goal>
@@ -140,41 +163,8 @@
                                 <configuration>
                                     <basedir>${project.basedir}</basedir>
                                     <skipCheckoutIfExists>true</skipCheckoutIfExists>
-                                    <checkoutDirectory>${project.basedir}/test-webdriver-downloader</checkoutDirectory>
-                                    <connectionUrl>scm:git:git@github.com:vietnd96/test-webdriver-downloader.git
-                                    </connectionUrl>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-
-
-        <profile>
-            <id>update-repository1</id>
-            <activation>
-                <file>
-                    <exists>test-automation-fwk/pom.xml</exists>
-                </file>
-            </activation>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-scm-plugin</artifactId>
-                        <version>${maven-scm-plugin.version}</version>
-                        <executions>
-                            <execution>
-                                <id>first-update</id>
-                                <phase>initialize</phase>
-                                <goals>
-                                    <goal>update</goal>
-                                </goals>
-                                <configuration>
-                                    <basedir>${project.basedir}</basedir>
-                                    <connectionUrl>scm:git:git@github.com:vietnd96/test-automation-fwk.git
+                                    <checkoutDirectory>${project.basedir}/${repository4}</checkoutDirectory>
+                                    <connectionUrl>scm:git:${remote.url}/${repository4}.git
                                     </connectionUrl>
                                 </configuration>
                             </execution>
@@ -185,10 +175,14 @@
         </profile>
 
         <profile>
-            <id>update-repository2</id>
+            <id>update-${repositoryRoot}</id>
             <activation>
+                <property>
+                    <name>repositoryRoot</name>
+                    <value>!</value>
+                </property>
                 <file>
-                    <exists>test-java2robot-adapter/pom.xml</exists>
+                    <exists>pom.xml</exists>
                 </file>
             </activation>
             <build>
@@ -199,15 +193,16 @@
                         <version>${maven-scm-plugin.version}</version>
                         <executions>
                             <execution>
-                                <id>second-update</id>
+                                <id>update-${repositoryRoot}</id>
                                 <phase>initialize</phase>
                                 <goals>
                                     <goal>update</goal>
                                 </goals>
                                 <configuration>
                                     <basedir>${project.basedir}</basedir>
-                                    <connectionUrl>scm:git:git@github.com:vietnd96/test-java2robot-adapter.git
+                                    <connectionUrl>scm:git:${remote.url}/${repositoryRoot}.git
                                     </connectionUrl>
+                                    <workingDirectory>${project.basedir}</workingDirectory>
                                 </configuration>
                             </execution>
                         </executions>
@@ -217,10 +212,14 @@
         </profile>
 
         <profile>
-            <id>update-repository3</id>
+            <id>update-${repository1}</id>
             <activation>
+                <property>
+                    <name>repository1</name>
+                    <value>!</value>
+                </property>
                 <file>
-                    <exists>test-robot-framework/pom.xml</exists>
+                    <exists>${repository1}/pom.xml</exists>
                 </file>
             </activation>
             <build>
@@ -231,15 +230,15 @@
                         <version>${maven-scm-plugin.version}</version>
                         <executions>
                             <execution>
-                                <id>third-update</id>
+                                <id>update-${repository1}</id>
                                 <phase>initialize</phase>
                                 <goals>
                                     <goal>update</goal>
                                 </goals>
                                 <configuration>
-                                    <basedir>${project.basedir}</basedir>
-                                    <connectionUrl>scm:git:git@github.com:vietnd96/test-robot-framework.git
+                                    <connectionUrl>scm:git:${remote.url}/${repository1}.git
                                     </connectionUrl>
+                                    <workingDirectory>${project.basedir}/${repository1}</workingDirectory>
                                 </configuration>
                             </execution>
                         </executions>
@@ -249,10 +248,14 @@
         </profile>
 
         <profile>
-            <id>update-repository4</id>
+            <id>update-${repository2}</id>
             <activation>
+                <property>
+                    <name>repository2</name>
+                    <value>!</value>
+                </property>
                 <file>
-                    <exists>test-webdriver-downloader/pom.xml</exists>
+                    <exists>${repository2}/pom.xml</exists>
                 </file>
             </activation>
             <build>
@@ -263,15 +266,87 @@
                         <version>${maven-scm-plugin.version}</version>
                         <executions>
                             <execution>
-                                <id>fourth-update</id>
+                                <id>update-${repository2}</id>
                                 <phase>initialize</phase>
                                 <goals>
                                     <goal>update</goal>
                                 </goals>
                                 <configuration>
-                                    <basedir>${project.basedir}</basedir>
-                                    <connectionUrl>scm:git:git@github.com:vietnd96/test-webdriver-downloader.git
+                                    <connectionUrl>scm:git:${remote.url}/${repository2}.git
                                     </connectionUrl>
+                                    <workingDirectory>${project.basedir}/${repository2}</workingDirectory>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <id>update-${repository3}</id>
+            <activation>
+                <property>
+                    <name>repository3</name>
+                    <value>!</value>
+                </property>
+                <file>
+                    <exists>${repository3}/pom.xml</exists>
+                </file>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-scm-plugin</artifactId>
+                        <version>${maven-scm-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>update-${repository3}</id>
+                                <phase>initialize</phase>
+                                <goals>
+                                    <goal>update</goal>
+                                </goals>
+                                <configuration>
+                                    <connectionUrl>scm:git:${remote.url}/${repository3}.git
+                                    </connectionUrl>
+                                    <workingDirectory>${project.basedir}/${repository3}</workingDirectory>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <id>update-${repository4}</id>
+            <activation>
+                <property>
+                    <name>repository4</name>
+                    <value>!</value>
+                </property>
+                <file>
+                    <exists>${repository4}/pom.xml</exists>
+                </file>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-scm-plugin</artifactId>
+                        <version>${maven-scm-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>update-${repository4}</id>
+                                <phase>initialize</phase>
+                                <goals>
+                                    <goal>update</goal>
+                                </goals>
+                                <configuration>
+                                    <connectionUrl>scm:git:${remote.url}/${repository4}.git
+                                    </connectionUrl>
+                                    <workingDirectory>${project.basedir}/${repository4}</workingDirectory>
                                 </configuration>
                             </execution>
                         </executions>
