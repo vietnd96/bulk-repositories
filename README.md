@@ -38,6 +38,7 @@
 ~$ cd fs-test-automation
 fs-test-automation$ mvn -f checkout.xml initialize
 ```
+Note: In the first time, this command is used to clone all dependency repositories. Later, it would be used to pull last code from the remote.
 
 #### 3. Ensure that all dependency repositories are cloned successfully
 
