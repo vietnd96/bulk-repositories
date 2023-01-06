@@ -99,6 +99,14 @@ fs-test-automation$ cd test-robot-framework
 fs-test-automation/test-robot-framework$ mvn -f pom.xml initialize robotframework:run -Dincludes=Statistics
 ```
 
+Note: In case Selenium Hub is running in another server, kindly provide the hub URL via property "selenium.hub.url" from
+command line<br>
+For example:
+
+```shell
+mvn -f pom.xml initialize robotframework:run -Dincludes=Statistics -Dselenium.hub.url=https://controller-hub.ndviet.com:4444
+```
+
 #### 8. Checkout the test report.html and screenshots after execution completed
 
 ```shell
