@@ -4,19 +4,16 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.ndviet</groupId>
+    <groupId>io.github.ndviet</groupId>
     <artifactId>fs-test-automation</artifactId>
-    <version>${revision}</version>
+    <version>1.0.0-SNAPSHOT</version>
     <name>FS Test Automation Project</name>
     <packaging>pom</packaging>
     <modules>
+        <module>test-parent-pom</module>
         <module>test-automation-fwk</module>
         <module>test-java2robot-adapter</module>
         <module>test-robot-framework</module>
         <module>test-webdriver-downloader</module>
     </modules>
-
-    <properties>
-        <revision>1.0.0-SNAPSHOT</revision>
-    </properties>
 </project>

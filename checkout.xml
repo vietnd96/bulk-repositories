@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.ndviet</groupId>
+    <groupId>io.github.ndviet</groupId>
     <artifactId>fs-test-automation</artifactId>
     <version>${revision}</version>
     <name>FS Test Automation Project</name>
@@ -13,6 +13,7 @@
         <remote.url>git@github.com:vietnd96</remote.url>
         <!--Leave the value as empty if any repository is not used-->
         <repositoryRoot>fs-test-automation</repositoryRoot>
+        <repository0>test-parent-pom</repository0>
         <repository1>test-automation-fwk</repository1>
         <repository2>test-java2robot-adapter</repository2>
         <repository3>test-robot-framework</repository3>
@@ -22,6 +23,44 @@
     </properties>
 
     <profiles>
+        <profile>
+            <id>checkout-${repository0}</id>
+            <activation>
+                <property>
+                    <name>repository0</name>
+                    <value>!</value>
+                </property>
+                <file>
+                    <missing>${repository0}/pom.xml</missing>
+                </file>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-scm-plugin</artifactId>
+                        <version>${maven-scm-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>checkout-${repository0}</id>
+                                <phase>initialize</phase>
+                                <goals>
+                                    <goal>checkout</goal>
+                                </goals>
+                                <configuration>
+                                    <basedir>${project.basedir}</basedir>
+                                    <skipCheckoutIfExists>true</skipCheckoutIfExists>
+                                    <checkoutDirectory>${project.basedir}/${repository0}</checkoutDirectory>
+                                    <connectionUrl>scm:git:${remote.url}/${repository0}.git
+                                    </connectionUrl>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
         <profile>
             <id>checkout-${repository1}</id>
             <activation>
@@ -203,6 +242,42 @@
                                     <connectionUrl>scm:git:${remote.url}/${repositoryRoot}.git
                                     </connectionUrl>
                                     <workingDirectory>${project.basedir}</workingDirectory>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <id>update-${repository0}</id>
+            <activation>
+                <property>
+                    <name>repository0</name>
+                    <value>!</value>
+                </property>
+                <file>
+                    <exists>${repository0}/pom.xml</exists>
+                </file>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-scm-plugin</artifactId>
+                        <version>${maven-scm-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>update-${repository0}</id>
+                                <phase>initialize</phase>
+                                <goals>
+                                    <goal>update</goal>
+                                </goals>
+                                <configuration>
+                                    <connectionUrl>scm:git:${remote.url}/${repository0}.git
+                                    </connectionUrl>
+                                    <workingDirectory>${project.basedir}/${repository0}</workingDirectory>
                                 </configuration>
                             </execution>
                         </executions>
