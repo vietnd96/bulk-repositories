@@ -7,7 +7,7 @@
 
 ## Defects
 
-* [List defects which are found while executing test](https://github.com/vietnd96/fs-test-automation/issues)
+* [List defects which are found while executing test](https://github.com/vietnd96/test-automation-project/issues)
 
 ## List dependency repositories
 
@@ -26,17 +26,17 @@
 
 ## Steps to execute test cases
 
-#### 1. Clone this repository "fs-test-automation"
+#### 1. Clone this repository "test-automation-project"
 
 ```shell
-~$ git clone git@github.com:vietnd96/fs-test-automation.git
+~$ git clone git@github.com:vietnd96/test-automation-project.git
 ```
 
-#### 2. Clone dependency repositories by executing Maven command in repo "fs-test-automation"
+#### 2. Clone dependency repositories by executing Maven command in repo "test-automation-project"
 
 ```shell
-~$ cd fs-test-automation
-fs-test-automation$ mvn -f checkout.xml initialize
+~$ cd test-automation-project
+test-automation-project$ mvn -f checkout.xml initialize
 ```
 
 Note: In the first time, this command is used to clone all dependency repositories. Later, it would be used to pull the
@@ -45,7 +45,7 @@ latest code from the remote.
 #### 3. Ensure that all dependency repositories are cloned successfully
 
 ```shell
-fs-test-automation$ ls -1
+test-automation-project$ ls -1
   checkout.xml
   pom.xml
   test-automation-fwk
@@ -54,10 +54,10 @@ fs-test-automation$ ls -1
   test-webdriver-downloader
 ```
 
-#### 4. Build the repository "fs-test-automation"
+#### 4. Build the repository "test-automation-project"
 
 ```shell
-fs-test-automation$ mvn clean install
+test-automation-project$ mvn clean install
 ```
 
 #### 5. Ensure that selenium-server jar and drivers are downloaded successfully
@@ -65,7 +65,7 @@ fs-test-automation$ mvn clean install
 Noted: Below result is tested on Ubuntu. Based on OS, the packages would be downloaded.
 
 ```shell
-fs-test-automation$ ls -1 test-webdriver-downloader/Drivers
+test-automation-project$ ls -1 test-webdriver-downloader/Drivers
     chromedriver-linux-64bit
     chromedriver-linux-64bit.version
     edgedriver-linux-64bit
@@ -83,20 +83,20 @@ fs-test-automation$ ls -1 test-webdriver-downloader/Drivers
 #### 6. Start Selenium Server (Hub & Node). Keep both these 2 terminals running
 
 ```shell
-fs-test-automation$ cd test-webdriver-downloader/Drivers
-fs-test-automation/test-webdriver-downloader/Drivers$ java -jar selenium-server hub
+test-automation-project$ cd test-webdriver-downloader/Drivers
+test-automation-project/test-webdriver-downloader/Drivers$ java -jar selenium-server hub
 ```
 
 ```shell
-fs-test-automation$ cd test-webdriver-downloader/Drivers
-fs-test-automation/test-webdriver-downloader/Drivers$ java -jar selenium-server node --port 5555
+test-automation-project$ cd test-webdriver-downloader/Drivers
+test-automation-project/test-webdriver-downloader/Drivers$ java -jar selenium-server node --port 5555
 ```
 
 #### 7. Open another terminal to execute test cases
 
 ```shell
-fs-test-automation$ cd test-robot-framework
-fs-test-automation/test-robot-framework$ mvn -f pom.xml initialize robotframework:run -Dincludes=Statistics
+test-automation-project$ cd test-robot-framework
+test-automation-project/test-robot-framework$ mvn -f pom.xml initialize robotframework:run -Dincludes=Statistics
 ```
 
 Note: In case Selenium Hub is running in another server, kindly provide the hub URL via property "selenium.hub.url" from
@@ -110,12 +110,12 @@ mvn -f pom.xml initialize robotframework:run -Dincludes=Statistics -Dselenium.hu
 #### 8. Checkout the test report.html and screenshots after execution completed
 
 ```shell
-fs-test-automation/test-robot-framework$ ls -1 target/reports/
+test-automation-project/test-robot-framework$ ls -1 target/reports/
     TEST-acceptance.xml
     log.html
     output.xml
     report.html
-fs-test-automation/test-robot-framework$ ls -1 target/screenshots/
+test-automation-project/test-robot-framework$ ls -1 target/screenshots/
 ```
 
 #### Video of demonstration steps to execute test cases
