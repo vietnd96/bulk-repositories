@@ -5,14 +5,21 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>io.github.ndviet</groupId>
-    <artifactId>fs-test-automation</artifactId>
+    <artifactId>test-automation-project</artifactId>
     <version>${revision}</version>
-    <name>FS Test Automation Project</name>
+    <name>Test Automation Project</name>
+    <description>POM is used to perform clone/pull all dependency repositories in oneshot.
+        Usage: mvn -f checkout.xml initialize
+    </description>
+    <url>https://github.com/${github.organization}/${project.artifactId}/tree/${github.branch}</url>
+    <packaging>pom</packaging>
 
     <properties>
-        <remote.url>git@github.com:vietnd96</remote.url>
+        <github.organization>vietnd96</github.organization>
+        <remote.url>git@github.com:${github.organization}</remote.url>
+        <github.branch>master</github.branch>
         <!--Leave the value as empty if any repository is not used-->
-        <repositoryRoot>fs-test-automation</repositoryRoot>
+        <repositoryRoot>test-automation-project</repositoryRoot>
         <repository0>test-parent-pom</repository0>
         <repository1>test-automation-fwk</repository1>
         <repository2>test-java2robot-adapter</repository2>

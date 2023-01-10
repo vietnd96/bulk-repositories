@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>io.github.ndviet</groupId>
+        <artifactId>test-parent-pom</artifactId>
+        <version>${revision}</version>
+        <relativePath>test-parent-pom/pom.xml</relativePath>
+    </parent>
+    <artifactId>test-automation-project</artifactId>
+    <version>${revision}</version>
+    <name>Test Automation Project</name>
+    <description>
+        POM is used to perform deploy/release all dependency repositories in oneshot.
+        Usage: mvn -f deploy.xml clean deploy -Dstaging=true -Drelease=true -Drevision=RELEASE_TAG
+    </description>
+    <url>https://${github.url}/${github.organization}/${project.artifactId}/tree/${github.branch}</url>
+    <packaging>pom</packaging>
+    <modules>
+        <module>test-parent-pom</module>
+        <module>test-automation-fwk</module>
+        <module>test-java2robot-adapter</module>
+        <module>test-robot-framework</module>
+        <module>test-webdriver-downloader</module>
+    </modules>
+
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>${github.id}</id>
+            <name>${github.name}</name>
+            <email>${github.email}</email>
+            <roles>
+                <role>maintainer</role>
+                <role>developer</role>
+            </roles>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git@${github.url}:${github.organization}/${project.artifactId}.git</connection>
+        <developerConnection>scm:git:ssh://git@${github.url}:${github.organization}/${project.artifactId}.git
+        </developerConnection>
+        <url>https://${github.url}/${github.organization}/${project.artifactId}/tree/${github.branch}</url>
+    </scm>
+
+    <profiles>
+        <profile>
+            <id>flatten-pom</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>flatten-maven-plugin</artifactId>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+</project>
