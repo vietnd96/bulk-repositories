@@ -3,3 +3,4 @@
 !*.xml
 !.gitignore
 !*.md
+**/.flattened-pom.xml
