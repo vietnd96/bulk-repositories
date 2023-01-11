@@ -16,7 +16,7 @@
         POM is used to perform deploy/release all dependency repositories in oneshot.
         Usage: mvn -f deploy.xml clean deploy -Dstaging=true -Drelease=true -Drevision=RELEASE_TAG
     </description>
-    <url>https://${github.url}/${github.organization}/${project.artifactId}/tree/${github.branch}</url>
+    <url>https://${github.url}/${github.organization}/${github.repository}/tree/${github.branch}</url>
     <packaging>pom</packaging>
     <modules>
         <module>test-parent-pom</module>
@@ -25,6 +25,10 @@
         <module>test-robot-framework</module>
         <module>test-webdriver-downloader</module>
     </modules>
+
+    <properties>
+        <github.repository>test-automation-project</github.repository>
+    </properties>
 
     <licenses>
         <license>
@@ -46,10 +50,10 @@
     </developers>
 
     <scm>
-        <connection>scm:git:git@${github.url}:${github.organization}/${project.artifactId}.git</connection>
-        <developerConnection>scm:git:ssh://git@${github.url}:${github.organization}/${project.artifactId}.git
+        <connection>scm:git:git@${github.url}:${github.organization}/${github.repository}.git</connection>
+        <developerConnection>scm:git:ssh://git@${github.url}:${github.organization}/${github.repository}.git
         </developerConnection>
-        <url>https://${github.url}/${github.organization}/${project.artifactId}/tree/${github.branch}</url>
+        <url>https://${github.url}/${github.organization}/${github.repository}/tree/${github.branch}</url>
     </scm>
 
     <profiles>

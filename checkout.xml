@@ -11,13 +11,9 @@
     <description>POM is used to perform clone/pull all dependency repositories in oneshot.
         Usage: mvn -f checkout.xml initialize
     </description>
-    <url>https://github.com/${github.organization}/${project.artifactId}/tree/${github.branch}</url>
     <packaging>pom</packaging>
 
     <properties>
-        <github.organization>vietnd96</github.organization>
-        <remote.url>git@github.com:${github.organization}</remote.url>
-        <github.branch>master</github.branch>
         <!--Leave the value as empty if any repository is not used-->
         <repositoryRoot>test-automation-project</repositoryRoot>
         <repository0>test-parent-pom</repository0>

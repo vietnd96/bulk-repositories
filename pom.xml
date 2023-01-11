@@ -8,7 +8,6 @@
     <version>${revision}</version>
     <name>Test Automation Project</name>
     <description>A sample project with entire repositories together for the test execution.</description>
-    <url>https://${github.url}/${github.organization}/${project.artifactId}/tree/${github.branch}</url>
     <packaging>pom</packaging>
     <modules>
         <module>test-parent-pom</module>
