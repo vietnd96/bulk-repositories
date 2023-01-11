@@ -11,17 +11,18 @@
 
 ## List dependency repositories
 
-1. [test-automation-fwk](https://github.com/vietnd96/test-automation-fwk)
-2. [test-java2robot-adapter](https://github.com/vietnd96/test-java2robot-adapter)
-3. [test-robot-framework](https://github.com/vietnd96/test-robot-framework)
-4. [test-webdriver-downloader](https://github.com/vietnd96/test-webdriver-downloader)
+1. [test-parent-pom](https://github.com/vietnd96/test-parent-pom)
+2. [test-automation-fwk](https://github.com/vietnd96/test-automation-fwk)
+3. [test-java2robot-adapter](https://github.com/vietnd96/test-java2robot-adapter)
+4. [test-robot-framework](https://github.com/vietnd96/test-robot-framework)
+5. [test-webdriver-downloader](https://github.com/vietnd96/test-webdriver-downloader)
 
 ## System requires
 
 1. Git (Tested version 2.30.0). Ensure that code can be cloned from GitHub via SSH.
 2. Apache Maven (Tested version 3.8.6). Ensure that there is no connection blocker to reach Maven Central Repository for
    downloading dependencies.
-3. Java JDK, JRE (Tested openjdk 11.0.16 2022-07-19)
+3. Java JDK, JRE (Tested in [17.0.2 (build 17.0.2+8)](https://jdk.java.net/archive/))
 4. Chrome (Tested version 108.0.5359.125)
 
 ## Steps to execute test cases
