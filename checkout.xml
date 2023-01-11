@@ -14,6 +14,8 @@
     <packaging>pom</packaging>
 
     <properties>
+        <github.organization>vietnd96</github.organization>
+        <remote.url>git@github.com:${github.organization}</remote.url>
         <!--Leave the value as empty if any repository is not used-->
         <repositoryRoot>test-automation-project</repositoryRoot>
         <repository0>test-parent-pom</repository0>
