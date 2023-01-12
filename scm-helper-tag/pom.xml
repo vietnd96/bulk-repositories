@@ -45,15 +45,15 @@
                                 <id>tag-${repositoryRoot}</id>
                                 <phase>initialize</phase>
                                 <goals>
-                                    <goal>${tag.goal}</goal>
+                                    <goal>${goal}</goal>
                                 </goals>
                                 <configuration>
-                                    <tag>${tag.name}</tag>
+                                    <tag>${name}</tag>
                                     <basedir>${project.parent.basedir}</basedir>
                                     <connectionUrl>scm:git:${remote.url}/${repositoryRoot}.git
                                     </connectionUrl>
                                     <workingDirectory>${project.parent.basedir}</workingDirectory>
-                                    <pushChanges>${tag.pushChanges}</pushChanges>
+                                    <pushChanges>${pushChanges}</pushChanges>
                                 </configuration>
                             </execution>
                         </executions>
@@ -81,14 +81,14 @@
                                 <id>tag-${repository0}</id>
                                 <phase>initialize</phase>
                                 <goals>
-                                    <goal>${tag.goal}</goal>
+                                    <goal>${goal}</goal>
                                 </goals>
                                 <configuration>
-                                    <tag>${tag.name}</tag>
+                                    <tag>${name}</tag>
                                     <connectionUrl>scm:git:${remote.url}/${repository0}.git
                                     </connectionUrl>
                                     <workingDirectory>${project.parent.basedir}/${repository0}</workingDirectory>
-                                    <pushChanges>${tag.pushChanges}</pushChanges>
+                                    <pushChanges>${pushChanges}</pushChanges>
                                 </configuration>
                             </execution>
                         </executions>
@@ -116,14 +116,14 @@
                                 <id>tag-${repository1}</id>
                                 <phase>initialize</phase>
                                 <goals>
-                                    <goal>${tag.goal}</goal>
+                                    <goal>${goal}</goal>
                                 </goals>
                                 <configuration>
-                                    <tag>${tag.name}</tag>
+                                    <tag>${name}</tag>
                                     <connectionUrl>scm:git:${remote.url}/${repository1}.git
                                     </connectionUrl>
                                     <workingDirectory>${project.parent.basedir}/${repository1}</workingDirectory>
-                                    <pushChanges>${tag.pushChanges}</pushChanges>
+                                    <pushChanges>${pushChanges}</pushChanges>
                                 </configuration>
                             </execution>
                         </executions>
@@ -151,14 +151,14 @@
                                 <id>tag-${repository2}</id>
                                 <phase>initialize</phase>
                                 <goals>
-                                    <goal>${tag.goal}</goal>
+                                    <goal>${goal}</goal>
                                 </goals>
                                 <configuration>
-                                    <tag>${tag.name}</tag>
+                                    <tag>${name}</tag>
                                     <connectionUrl>scm:git:${remote.url}/${repository2}.git
                                     </connectionUrl>
                                     <workingDirectory>${project.parent.basedir}/${repository2}</workingDirectory>
-                                    <pushChanges>${tag.pushChanges}</pushChanges>
+                                    <pushChanges>${pushChanges}</pushChanges>
                                 </configuration>
                             </execution>
                         </executions>
@@ -186,14 +186,14 @@
                                 <id>tag-${repository3}</id>
                                 <phase>initialize</phase>
                                 <goals>
-                                    <goal>${tag.goal}</goal>
+                                    <goal>${goal}</goal>
                                 </goals>
                                 <configuration>
-                                    <tag>${tag.name}</tag>
+                                    <tag>${name}</tag>
                                     <connectionUrl>scm:git:${remote.url}/${repository3}.git
                                     </connectionUrl>
                                     <workingDirectory>${project.parent.basedir}/${repository3}</workingDirectory>
-                                    <pushChanges>${tag.pushChanges}</pushChanges>
+                                    <pushChanges>${pushChanges}</pushChanges>
                                 </configuration>
                             </execution>
                         </executions>
@@ -221,14 +221,14 @@
                                 <id>tag-${repository4}</id>
                                 <phase>initialize</phase>
                                 <goals>
-                                    <goal>${tag.goal}</goal>
+                                    <goal>${goal}</goal>
                                 </goals>
                                 <configuration>
-                                    <tag>${tag.name}</tag>
+                                    <tag>${name}</tag>
                                     <connectionUrl>scm:git:${remote.url}/${repository4}.git
                                     </connectionUrl>
                                     <workingDirectory>${project.parent.basedir}/${repository4}</workingDirectory>
-                                    <pushChanges>${tag.pushChanges}</pushChanges>
+                                    <pushChanges>${pushChanges}</pushChanges>
                                 </configuration>
                             </execution>
                         </executions>
