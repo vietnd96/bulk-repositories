@@ -15,7 +15,7 @@
     <version>${revision}</version>
     <name>SCM Helper Clone</name>
     <description>POM is used to perform clone all dependency repositories in oneshot.
-        Usage: mvn initialize -Dgit=clone
+        Usage: mvn initialize -Dhelper=clone
     </description>
     <packaging>pom</packaging>
 

@@ -15,7 +15,7 @@
     <version>${revision}</version>
     <name>SCM Helper Pull</name>
     <description>POM is used to perform pull update all dependency repositories in oneshot.
-        Usage: mvn initialize -Dgit=pull
+        Usage: mvn initialize -Dhelper=pull
     </description>
     <packaging>pom</packaging>
 

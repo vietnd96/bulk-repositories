@@ -15,7 +15,7 @@
     <version>${revision}</version>
     <name>SCM Helper Tag</name>
     <description>POM is used to perform tag/untag and push changes to all dependency repositories in oneshot.
-        Usage: mvn initialize -Dgit=tag -DpushChanges=true -Dname=RELEASENAME
+        Usage: mvn initialize -Dhelper=tag -DpushChanges=true -Dname=RELEASENAME
     </description>
     <packaging>pom</packaging>
 
